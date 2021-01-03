@@ -10,6 +10,8 @@ pub enum Architecture {
     S390x,
     Wasm32,
     X86_64,
+    RiscV32,
+    RiscV64,
 }
 
 impl Architecture {
@@ -26,6 +28,8 @@ impl Architecture {
             Architecture::S390x => Some(AddressSize::U64),
             Architecture::Wasm32 => Some(AddressSize::U32),
             Architecture::X86_64 => Some(AddressSize::U64),
+            Architecture::RiscV32 => Some(AddressSize::U32),
+            Architecture::RiscV64 => Some(AddressSize::U64),
         }
     }
 }

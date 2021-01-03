@@ -128,6 +128,13 @@ where
                     Architecture::Unknown
                 }
             }
+            elf::EM_RISCV => {
+                if self.is_64() {
+                    Architecture::RiscV64
+                } else {
+                    Architecture::RiscV32
+                }
+            }
             _ => Architecture::Unknown,
         }
     }

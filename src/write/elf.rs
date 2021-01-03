@@ -77,6 +77,8 @@ impl Object {
             Architecture::X86_64 => true,
             Architecture::S390x => true,
             Architecture::Mips => false,
+            Architecture::RiscV32 => true,
+            Architecture::RiscV64 => true,
             _ => {
                 return Err(Error(format!(
                     "unimplemented architecture {:?}",
@@ -349,6 +351,8 @@ impl Object {
             Architecture::X86_64 => elf::EM_X86_64,
             Architecture::S390x => elf::EM_S390,
             Architecture::Mips => elf::EM_MIPS,
+            Architecture::RiscV32 => elf::EM_RISCV,
+            Architecture::RiscV64 => elf::EM_RISCV,
             _ => {
                 return Err(Error(format!(
                     "unimplemented architecture {:?}",
